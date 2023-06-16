@@ -1,0 +1,421 @@
+@import "./reset.css";
+
+@font-face {
+    font-family: "Roboto";
+    src: url("./fonts/Roboto-Regular.ttf");
+}
+@font-face {
+    font-family: "Roboto Light";
+    src: url("./fonts/Roboto-Light.ttf");
+}
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("./fonts/Roboto-Bold.ttf");
+}
+
+// ---------------- standard ----------------
+
+*{
+    &::-webkit-scrollbar{
+        width: 15px;
+        height: 15px;
+    }
+    &::-webkit-scrollbar-track-piece  {
+        background-color: #2b2b2c;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: #5f6161;
+    }
+
+    color: aliceblue;
+    box-sizing: border-box;
+}
+#app{
+    background-color: #3c3f41;
+    min-height: 100vh;
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+}
+span{
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+p,.likeP{
+    font-size: 1rem;
+    line-height: 1.25rem;
+}
+h2,.likeH2{
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+h1,.likeH1{
+    font-size: 3rem;
+    line-height: 3.75rem;
+}
+.littleText{
+    font-family: Roboto Light, sans-serif;
+    font-size: .8rem;
+    line-height: 1rem;
+}
+.robotoLight{
+    font-family: Roboto Light, sans-serif;
+}
+.robotoBold{
+    font-family: Roboto Bold, sans-serif;
+}
+
+button,.likeButton{
+    font: inherit;
+    cursor: pointer;
+    background-color: #313336;
+    outline: inherit;
+    border: 2px solid #2b2b2c;
+    border-radius: 15px;
+    padding: 10px;
+    width: fit-content;
+    height: fit-content;
+    transition: all .3s ease-in-out;
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color: #2b2b2c;
+    }
+    &:active{
+        transition: all .1s ease-in-out;
+        border: 2px solid aliceblue;
+    }
+}
+input,textarea{
+    font: inherit;
+    outline: inherit;
+    border: 2px solid #2b2b2c;
+    background-color: #2b2b2c;
+    padding: 10px;
+    resize: vertical;
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color: #313336;
+    }
+    &:focus{
+        transition: all .1s ease-in-out;
+        background-color: #313336;
+    }
+    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    &::-webkit-input-placeholder{
+        color: #5f6161;
+    }
+}
+select,option{
+    color: #3c3f41;
+}
+br{
+    margin: 10px;
+}
+.nav-link{
+    text-decoration: none;
+    font: inherit;
+    cursor: pointer;
+    background-color: #313336;
+    border: 2px solid #2b2b2c;
+    padding: 10px;
+}
+.my-active{
+    background-color: tomato;
+}
+.orange{
+    color: orange;
+}
+.chartreuse{
+    color: chartreuse;
+}
+.tomato{
+    color: tomato;
+}
+.bg1{
+    background-color: #3c3f41;
+}
+.bg2{
+    background-color: #313336;
+}
+.bg3{
+    background-color: #2b2b2c;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+.flexWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justifyCenter{
+    justify-content: center;
+}
+.alignCenter{
+    align-items: center;
+}
+.pointer{
+    cursor: pointer;
+}
+.overflowVisible{
+    overflow: inherit;
+}
+
+// ---------------- затычки ----------------
+
+.demoTransition-enter-active,.demoTransition-leave-active{
+    transition: opacity .1s ease;
+}
+.demoTransition-enter-from,.demoTransition-leave-to{
+    opacity: 0;
+}
+
+// ---------------- custom ----------------
+
+.fakeTripleCheckWithText,.fakeDoubleCheckWithText{
+    background-color: inherit;
+    border: none;
+    border-radius: inherit;
+    padding: 2px;
+    //----
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all .1s ease-in-out;
+    &:hover{
+        transition: all .1s ease-in-out;
+    }
+    &:active{
+        border: none;
+    }
+    &>div{
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid #2b2b2c;
+        border-radius: 4px;
+        margin-right: .4rem;
+        flex-shrink: 0;
+    }
+    &>span{
+        text-align: left;
+    }
+}
+.fakeTripleCheckWithText{
+    &-noMatter>div{
+        background-color: aliceblue;
+    }
+    &-include>div{
+        background-color: chartreuse;
+    }
+    &-exclude>div{
+        background-color: tomato;
+    }
+}
+.fakeDoubleCheckWithText{
+    &-noMatter>div{
+        background-color: aliceblue;
+    }
+    &-include>div{
+        background-color: orange;
+    }
+}
+
+.fakeInputFile{
+    display: block;
+    width: 100%;
+    height: 42px;
+    background-color: #2b2b2c;
+    border: 2px solid #2b2b2c;
+    border-radius: 15px;
+    position: relative;
+    &:hover{
+        transition: all .3s ease-in-out;
+        background-color: #313336;
+    }
+    &:active{
+        transition: all .1s ease-in-out;
+        border: 2px solid aliceblue;
+    }
+    &>span{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-family: Roboto Light, sans-serif;
+        color: rgba(240, 248, 255, 0.29);
+    }
+    &>input{
+        opacity: 0;
+        width: 100%;
+        cursor: pointer;
+    }
+    &[loaded=true]{
+        &>span{
+            font-family: Roboto, sans-serif;
+            color: aliceblue;
+        }
+    }
+}
+
+.fakeRadioButtonsBlock{
+    width: fit-content;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #2b2b2c;
+    display: flex;
+    flex-wrap: wrap;
+    &>button{
+        //border: none;
+        flex-grow: 1;
+        background-color: #3c3f41;
+        border-color: #3c3f41;
+        transition: all .1s ease-in-out;
+        border-radius: 0;
+        &:hover{
+            transition: all .1s ease-in-out;
+            background-color: #313336;
+            border-color: #313336;
+        }
+        &:active{
+            background-color: #2b2b2c;
+            border-color: #2b2b2c;
+        }
+        &[isChoiced=true]{
+            background-color: #2b2b2c;
+            border-color: #2b2b2c;
+            &:hover{
+                background-color: #2b2b2c;
+                border-color: #2b2b2c;
+            }
+        }
+    }
+}
+
+.fakeSelect,.fakeSelect-reverse{
+    width: fit-content;
+    position: relative;
+    &>button{
+        font: inherit;
+        cursor: pointer;
+        border: none;
+        color: aliceblue;
+        font-size: 1rem;
+        //----
+        background-color: #313336;
+        padding: 8px 12px;
+        border-radius: 8px;
+        //----
+        display: flex;
+        align-items: center;
+        //----
+        transition: all .3s ease-in-out;
+        &>svg{
+            margin-left: 12px;
+            fill: aliceblue;
+            height: .5rem;
+            transform: rotate(-90deg);
+            transition: all .1s ease-in-out;
+        }
+        &:hover{
+            background-color: #2b2b2c;
+            transition: all .3s ease-in-out;
+        }
+    }
+    &>div{
+        //----
+        z-index: 1;
+        //min-width: calc(100% - 4px);
+        min-width: 100%;
+        background-color: #2b2b2c;
+        //outline: 2px solid #2b2b2c;
+        border: 2px solid #2b2b2c;
+        margin: 6px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        //----
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        white-space: nowrap;
+        &>button{
+            font: inherit;
+            cursor: pointer;
+            border: none;
+            color: aliceblue;
+            font-size: 1rem;
+            border-radius: 0;
+            //----
+            width: 100%;
+            text-align: left;
+            background-color: #2b2b2c;
+            padding: 4px 10px 4px 10px;
+            //----
+            transition: all .1s ease-in-out;
+            &:first-child{
+                padding-top:6px;
+            }
+            &:last-child{
+                padding-bottom: 6px;
+            }
+            &:hover{
+                transition: all .1s ease-in-out;
+                background-color: #3c3f41;
+            }
+        }
+    }
+    &[isOpen=true]{
+        &>button{
+            background-color: #2b2b2c;
+            transition: all .1s ease-in-out;
+            &>svg{
+                transform: rotate(-180deg);
+                transition: all .1s ease-in-out;
+            }
+        }
+    }
+}
+.fakeSelect-reverse{
+    &>div{
+        bottom: 100%;
+    }
+    &[isOpen=true]>button>svg{
+        transform: rotate(0);
+    }
+}
+
+.mistakesList,.doneMessage{
+    background-color: #3c3f41;
+    position: fixed;
+    top: calc(50px + 20px);
+    //align-self: center;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    border-radius: 15px;
+    padding: 30px;
+    &>button{
+        width: 100%;
+        border-radius: 15px;
+    }
+    &>*{
+        margin-bottom: 10px;
+    }
+    &>:last-child{
+        margin-bottom: 0;
+    }
+}
+.mistakesList{
+    border: 2px solid tomato;
+    &>p{
+        color: tomato;
+    }
+}
+.doneMessage{
+    border: 2px solid chartreuse;
+    &>p{
+        color: chartreuse;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "curs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "json": "json-server --watch ./src/stores/data.json --port 3000",
+    "con": "concurrently \"yarn dev\" \"yarn json\""
+  },
+  "dependencies": {
+    "axios": "^1.3.5",
+    "pinia": "^2.0.32",
+    "sass": "^1.60.0",
+    "vue": "^3.2.47",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.0.0",
+    "concurrently": "^8.0.1",
+    "vite": "^4.1.4"
+  }
+}
