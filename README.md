@@ -19,11 +19,6 @@ npm install
 ### Compile and Hot-Reload for Development
 
 ```sh
+npm run json
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
